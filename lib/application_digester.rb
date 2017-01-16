@@ -36,7 +36,7 @@ class ApplicationDigester
   end
 
   def all_paths
-    Dir[Rails.root.join('./**/*')]
+    Dir[Rails.root.join('./**/*')].sort
   end
 
   def exclude_paths

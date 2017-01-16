@@ -31,5 +31,5 @@ class ApplicationDigester
     end]
   end
 
-  EXCLUDE_DIRS = %w(log tmp public/assets).freeze
+  EXCLUDE_DIRS = %w(log tmp public/assets vendor/bundle).freeze
 end

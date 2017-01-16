@@ -2,8 +2,8 @@
 
 Disclaimer: This library is still in early stages of development.
 
-This gem is intended to be used with a rails application, but has no dependencies
-on rails. By default, files in `log` and `tmp` are excluded in digesting.
+This gem is intended to be used with a rails application, and has a dependency
+on `Rails.root`. By default, files in `log` and `tmp` are excluded in digesting.
 
 Having a digest of the application running files is useful to know what code is
 actually running. Typically, a git SHA will be superior to calculating your own

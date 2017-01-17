@@ -1,4 +1,4 @@
-class LocalApplicationDigester
+class ApplicationDigester
   # Taking into account the location of every file helps capture changes such as
   # a file moving location, but the contents remain unchanged.
   def digest

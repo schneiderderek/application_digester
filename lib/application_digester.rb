@@ -1,6 +1,4 @@
-require "application_digester/version"
-
-class ApplicationDigester
+class LocalApplicationDigester
   # Taking into account the location of every file helps capture changes such as
   # a file moving location, but the contents remain unchanged.
   def digest
@@ -41,8 +39,11 @@ class ApplicationDigester
 
   def exclude_paths
     Dir[*EXCLUDE_DIRS.map do |dir_name|
-      Rails.root.join("#{dir_name}/**/*")
-    end]
+      [
+        Rails.root.join("#{dir_name}/**/*"),
+        Rails.root.join(dir_name), # This removes the excluded dir itself
+      ]
+    end.flatten]
   end
 
   EXCLUDE_DIRS = %w(log tmp public/assets vendor/bundle).freeze
